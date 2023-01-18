@@ -245,15 +245,34 @@ function mesesDelAño(array) {
 }
 
 function tablaDelSeis() {
+
+
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
-   // Tu código:
+   // Tu código:   
+   var tabla=[];
+   var producto;
+   var factor=6;
+   
+   for(var i=0; i<11; i++){
+      producto=factor*i;
+      tabla.push(producto);
+   }
+   return tabla;
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   mayores=[];
+   for(var i=0; i<array.length; i++){
+      if(array[i]>100){
+         mayores.push(array[i]);
+      }
+
+   }
+return mayores;
 }
 
 /* ----------------------------------------------------------------------------------
@@ -267,6 +286,34 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   var nuevoarray=[];
+   var auxi=0;
+   var control=false;
+   var salida="Se interrumpió la ejecución";
+   for(var i=0;i<10;i++){
+      if(i==0){
+         auxi=num+2;
+         nuevoarray.push(auxi);         
+      }else{
+         auxi=nuevoarray[i-1]+2;
+         nuevoarray.push(auxi);
+      };
+      
+      if((i+1)==(auxi)){
+         control=true;
+         break;
+      }
+
+
+   }
+   if(control==true){
+      return salida;
+   }
+   else{
+      return nuevoarray;
+   }
+
+
 }
 
 function continueStatement(num) {
@@ -276,7 +323,30 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   var narray=[];
+   var aux=0;
+   var i=0;
+   for(var i=0;i<10;i++){
+      if(i==0){
+         aux=num+2;
+         narray.push(aux);         
+      }else if((i==4)){
+         continue;
+         
+         
+      } else if(i<4 || i>4 ){
+         aux=narray[i-1]+2;
+         narray.push(aux);
+         
+      }      
+
+     }
+      
+
+     return narray;
 }
+
+
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {
