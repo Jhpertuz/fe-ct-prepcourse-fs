@@ -326,17 +326,15 @@ function continueStatement(num) {
    var narray=[];
    var aux=0;
    var i=0;
-   for(var i=0;i<10;i++){
-      if(i==0){
-         aux=num+2;
-         narray.push(aux);         
-      }else if((i==4)){
-         continue;
+   while(i<10){
+      if((i==4)){
+         i++;
+         continue;        
          
-         
-      } else if(i<4 || i>4 ){
-         aux=narray[i-1]+2;
-         narray.push(aux);
+      } else{
+         num+=2;
+         narray.push(num);
+         i++;
          
       }      
 
